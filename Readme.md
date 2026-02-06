@@ -45,7 +45,7 @@ gcloud config set project YOUR_PROJECT_ID
 ```
 #### 2. Buat Bucket GCS untuk Remote Backend
 
-`gcloud storage buckets create gs://nama-bucket-ta-anda --location=us-central1`
+`gcloud storage buckets create gs://nama-bucket-ta --location=us-central1`
 
 ### Langkah 2: Inisialisasi & Validasi
 
