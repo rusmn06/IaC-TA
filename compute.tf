@@ -40,6 +40,25 @@ resource "google_compute_instance_template" "web_template" {
     systemctl restart nginx
   EOF
 
+  # Template website dari github
+  # metadata_startup_script = <<-EOF
+  #   #! /bin/bash
+  #   apt-get update
+  #   apt-get install -y nginx git
+
+  #   # Clone website dari GitHub
+  #   git clone https://github.com/rusmn06/IaC-TA-testhtml.git /tmp/web
+  #   cp -r /tmp/web/* /var/www/html/
+
+  #   # Tambahkan hostname untuk visualisasi load balancing
+  #   vm_hostname=$(curl -H "Metadata-Flavor: Google" \
+  #     http://metadata.google.internal/computeMetadata/v1/instance/hostname)
+  #   echo "<p style='color:gray;font-size:12px'>Served by: $vm_hostname</p>" \
+  #     >> /var/www/html/index.html
+
+  #   systemctl restart nginx
+  # EOF
+
   # Siklus hidup: Buat template baru dulu sebelum menghapus yang lama (mencegah error saat update)
   lifecycle {
     create_before_destroy = true
