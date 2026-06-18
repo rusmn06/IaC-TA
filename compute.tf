@@ -1,5 +1,5 @@
 # 1. Instance Template
-# "Instance Template: Blueprint konfigurasi VM menggunakan Machine Type e2-micro" [cite: 319]
+# "Instance Template: Blueprint konfigurasi VM menggunakan Machine Type e2-micro"
 resource "google_compute_instance_template" "web_template" {
   name_prefix  = "web-server-template-"
   machine_type = "e2-micro"
@@ -21,7 +21,7 @@ resource "google_compute_instance_template" "web_template" {
     access_config {}
   }
 
-  # Tags Firewall (Note*: Harus sama dengan firewall rule di Network Layer)
+  # Tags Firewall,  arus sama dengan firewall rule di Network Layer)
   tags = ["web-server"]
 
   # Startup Script

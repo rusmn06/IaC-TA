@@ -23,7 +23,7 @@ resource "google_compute_firewall" "allow_lb_health_check" {
     ports    = ["80"]
   }
 
-  # Rentang IP Google Cloud Load Balancer untuk memeriksa kesehatan server
+  # Rentang IP Google Cloud Load Balancer untuk health check server
   source_ranges = [
     "130.211.0.0/22", 
     "35.191.0.0/16"
